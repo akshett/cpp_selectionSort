@@ -2,16 +2,9 @@
 
 using namespace std;
 
-int main(){
-	int n;
-	cout << "Enter array size: " << '\n';
-	cin >> n;
-	int arr[n];
-	cout << "Enter array elemnts" << '\n';
-	for (int i = 0; i < n; ++i){
-		cin >> arr[i];
-	}
-	
+void selectionSort(int* arr, int size)
+{
+	int n  = size;
 	for (int i = 0; i < n-1; ++i){
 		int temp = arr[i];
 		for (int j = i+1; j < n; ++j){
@@ -22,6 +15,21 @@ int main(){
 			}
 		}
 	}
+}
+
+int main(){
+	int n;
+	cout << "Enter array size: " << '\n';
+	cin >> n;
+	int arr[n];
+	cout << "Enter array elements" << '\n';
+	for (int i = 0; i < n; ++i){
+		cin >> arr[i];
+	}
+
+	selectionSort(arr, n);
+	
+
 	cout << "Sorted array: " << '\n';
 	for (int i =0; i<n;++i){
 	cout << arr[i]<< "     ";
